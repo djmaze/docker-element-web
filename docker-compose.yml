@@ -2,7 +2,10 @@ version: "3.4"
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      args:
+        - RIOT_VERSION=0.16.0
     environment:
       DEFAULT_HS_URL: https://matrix.org
       DISABLE_GUESTS: "true"
