@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  app:
+    build: .
+    environment:
+      DEFAULT_HS_URL: https://matrix.org
+      DISABLE_GUESTS: "true"
+      DISABLE_LOGIN_LANGUAGE_SELECTOR: "true"
+    ports:
+      - 8080:8080/tcp
