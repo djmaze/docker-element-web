@@ -19,7 +19,7 @@ RUN npm install -g http-server
 
 WORKDIR /usr/src/app
 COPY --from=builder /riot-web/webapp .
-COPY --from=builder /riot-web/config.sample.json .
+COPY config.sample.json .
 COPY docker-entrypoint.sh /usr/local/bin
 
 ENTRYPOINT ["docker-entrypoint.sh"]
