@@ -19,9 +19,9 @@ The app will now be available at [http://localhost:8080](http://localhost:8080).
 
 The container can be configured through several environment variables:
 
-- `DEFAULT_HS_URL`: default homeserver URL
-- `DISABLE_GUESTS`: disable guest access (`true`/`false`)
-- `DISABLE_LOGIN_LANGUAGE_SELECTOR`: disable login language selector (`true`/`false`)
+- `DEFAULT_HS_URL`: default homeserver URL (default: `https://matrix.org`)
+- `DISABLE_GUESTS`: disable guest access (`true`/`false`, default: `false`)
+- `DISABLE_LOGIN_LANGUAGE_SELECTOR`: disable login language selector (`true`/`false`, default: `false`)
 
 
 See also the supplied [docker-compose config](docker-compose.yml) for an example.
