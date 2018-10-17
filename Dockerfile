@@ -1,6 +1,6 @@
-FROM alpine AS builder
+FROM node:alpine AS builder
 
-RUN apk add --update --no-cache curl git libevent libffi libjpeg-turbo libssl1.0 nodejs nodejs-npm sqlite-libs unzip
+RUN apk add --update --no-cache curl git libevent libffi libjpeg-turbo libssl1.0 sqlite-libs unzip
 
 ARG RIOT_VERSION
 
@@ -10,7 +10,7 @@ RUN curl -L https://github.com/vector-im/riot-web/archive/v$RIOT_VERSION.zip -o 
  && mv riot-web-* riot-web
 
 WORKDIR riot-web
-RUN npm install
+RUN yarn install
 RUN npm run build
 
 FROM node:alpine
