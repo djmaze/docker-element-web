@@ -2,7 +2,7 @@ FROM node:alpine AS builder
 
 RUN apk add --update --no-cache curl git libevent libffi libjpeg-turbo libssl1.0 sqlite-libs unzip
 
-ARG RIOT_VERSION
+ARG RIOT_VERSION=0.17.0
 
 RUN curl -L https://github.com/vector-im/riot-web/archive/v$RIOT_VERSION.zip -o riot.zip \
  && unzip riot.zip \
