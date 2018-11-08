@@ -6,6 +6,8 @@ steps:
   image: plugins/docker
   settings:
     repo: mazzolino/docker-riot-web
+    build_args:
+      - RIOT_VERSION=$DRONE_TAG
     auto_tag: true
     username:
       from_secret: docker_username
