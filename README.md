@@ -1,5 +1,7 @@
 # docker-riot-web
 
+[![Build status](https://ci.strahlungsfrei.de/api/badges/djmaze/docker-riot-web/status.svg)](https://ci.strahlungsfrei.de/djmaze/docker-riot-web)
+
 This is a Docker image running a release version of [riot-web](https://github.com/vector-im/riot-web).
 
 ## Usage
