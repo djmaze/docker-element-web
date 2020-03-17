@@ -1,6 +1,6 @@
 FROM node:alpine AS builder
 
-RUN apk add --update --no-cache curl git libevent libffi libjpeg-turbo libssl1.1 python3 sqlite-libs unzip
+RUN apk add --update --no-cache cairo-dev curl g++ git libevent libffi libjpeg-turbo-dev libssl1.1 make pango-dev pkgconf pixman-dev python3 sqlite-libs unzip
 
 ARG RIOT_VERSION=0.17.0
 
