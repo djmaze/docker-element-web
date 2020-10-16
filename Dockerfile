@@ -2,14 +2,14 @@ FROM node:alpine AS builder
 
 RUN apk add --update --no-cache cairo-dev curl g++ git libevent libffi libjpeg-turbo-dev libssl1.1 make pango-dev pkgconf pixman-dev python3 sqlite-libs unzip
 
-ARG RIOT_VERSION=0.17.0
+ARG ELEMENT_VERSION=0.17.0
 
-RUN curl -L https://github.com/vector-im/riot-web/archive/v$RIOT_VERSION.zip -o riot.zip \
- && unzip riot.zip \
- && rm riot.zip \
- && mv riot-web-* riot-web
+RUN curl -L https://github.com/vector-im/element-web/archive/v$ELEMENT_VERSION.zip -o element.zip \
+ && unzip element.zip \
+ && rm element.zip \
+ && mv element-web-* element-web
 
-WORKDIR riot-web
+WORKDIR element-web
 RUN yarn install
 RUN npm run build
 
@@ -18,8 +18,8 @@ FROM node:alpine
 RUN npm install -g http-server
 
 WORKDIR /usr/src/app
-COPY --from=builder /riot-web/webapp .
-COPY --from=builder /riot-web/config.sample.json .
+COPY --from=builder /element-web/webapp .
+COPY --from=builder /element-web/config.sample.json .
 COPY docker-entrypoint.sh /usr/local/bin
 
 ENTRYPOINT ["docker-entrypoint.sh"]

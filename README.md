@@ -1,8 +1,8 @@
-# docker-riot-web
+# docker-element-web
 
-[![Build status](https://ci.strahlungsfrei.de/api/badges/djmaze/docker-riot-web/status.svg)](https://ci.strahlungsfrei.de/djmaze/docker-riot-web)
+[![Build status](https://ci.strahlungsfrei.de/api/badges/djmaze/docker-element-web/status.svg)](https://ci.strahlungsfrei.de/djmaze/docker-element-web)
 
-This is a Docker image running a release version of [riot-web](https://github.com/vector-im/riot-web).
+This is a Docker image running a release version of [element-web](https://github.com/vector-im/element-web).
 
 ## Usage
 
@@ -12,7 +12,7 @@ Pick a `VERSION` from the tags available at the Docker repository.
 docker run -d \
   -e DEFAULT_HS_URL=https://my.home-server.org \
   -p 8080:8080/tcp \
-  mazzolino/riot-web:<VERSION>
+  mazzolino/element-web:<VERSION>
 ```
 
 The app will now be available at [http://localhost:8080](http://localhost:8080).

@@ -5,9 +5,9 @@ steps:
 - name: build image
   image: plugins/docker
   settings:
-    repo: mazzolino/docker-riot-web
+    repo: mazzolino/docker-element-web
     build_args:
-      - RIOT_VERSION=${DRONE_TAG}
+      - ELEMENT_VERSION=${DRONE_TAG}
     auto_tag: true
     username:
       from_secret: docker_username
