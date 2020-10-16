@@ -1,4 +1,4 @@
-FROM node:alpine AS builder
+FROM node:14-alpine AS builder
 
 RUN apk add --update --no-cache cairo-dev curl g++ git libevent libffi libjpeg-turbo-dev libssl1.1 make pango-dev pkgconf pixman-dev python3 sqlite-libs unzip
 
@@ -13,7 +13,7 @@ WORKDIR element-web
 RUN yarn install
 RUN npm run build
 
-FROM node:alpine
+FROM node:14-alpine
 
 RUN npm install -g http-server
 
