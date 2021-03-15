@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        - ELEMENT_VERSION=1.7.15
+        - ELEMENT_VERSION=1.7.23
     environment:
       DEFAULT_HS_URL: https://matrix.org
       DISABLE_GUESTS: "true"
